@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="app"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+	<script type="text/babel">
+		/* Create element
+		var h1 = React.createElement('h1', null, [
+			React.createElement('span', null, 'Texto do span'),
+			React.createElement('span', null, 'Texto do span 2')
+			]
+		);
+		ReactDOM.render(h1, document.getElementById('app'));*/
+
+		/* Create element with DOM - it's not good
+		var h2 = React.DOM.h1(null, [
+			React.DOM.span(null, React.DOM.i(null, 'Itálico')),
+			React.DOM.span(null, 'Texto span 2')
+		]);
+		ReactDOM.render(h2, document.getElementById('app'));
+		*/
+
+		/* Create element with JSX, need compile the code to be rendered
+		 For that is need use babel
+		ReactDOM.render(
+			<h1>Hello World</h1>,
+			document.getElementById('app')
+		);
+		console.log(h1); */
+
+		// Creating components
+		var Title = React.createClass({
+			render: function () {
+				return (
+					<h1>
+						<span>Hello World Title</span>
+					</h1>
+				);
+			}
+		});
+
+		ReactDOM.render(
+			<Title />,
+			document.getElementById('app')
+		);
+	</script>
+</body>
+</html>
